@@ -21,6 +21,8 @@ permissions:
 
 jobs:
   build:
+    env:
+      DATOCMS_API_KEY: ${{ vars.DATOCMS_API_KEY }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git

@@ -1,0 +1,79 @@
+:root {
+  --color-purpul: #b3b0ff;
+  --color-pink: #fedeff;
+  --color-blue: #aee2ff;
+  --color-yellow: #faf4b7;
+  --bg-black: #000000;
+  --text-grey: #a9a9a9;
+  --text-white: #f9f9f9;
+
+  /* Transition duration */
+  --transition-01: 0.1s; /* when you click the button */
+  --transition-03: 0.3s; /* Global transition duration*/
+  --transition-05: 0.5s; /* Especial */
+
+  /* CORNER SIZES */
+  --border-corner-4: 0.25rem;
+  --border-corner-6: 0.375rem;
+  --border-corner-8: 0.5rem;
+  --border-corner-12: 0.75rem;
+  --border-corner-16: 1rem;
+  --border-corner-24: 1.5rem;
+  --border-corner-32: 2rem;
+
+  /* SMARTPHONE SIZE */
+  --phone-width-360: 360px;
+  --phone-width-320: 320px;
+
+  /* GAP SIZES */
+  --gap-4: 0.25rem;
+  --gap-6: 0.375rem;
+  --gap-8: 0.5rem;
+  --gap-12: 0.75rem;
+  --gap-14: 0.875rem;
+  --gap-16: 1rem;
+  --gap-18: 1.125rem;
+  --gap-24: 1.5rem;
+  --gap-32: 2rem;
+  --gap-36: 2.25rem;
+  --gap-48: 3rem;
+  --gap-64: 4rem;
+  --gap-80: 5rem;
+  --gap-96: 6rem;
+  --gap-128: 8rem;
+  --gap-152: 9.5rem;
+  --gap-176: 11rem;
+  --gap-192: 12rem;
+  --gap-208: 13rem;
+  --gap-224: 14rem;
+  --gap-240: 15rem;
+
+  /* FONT SIZES */
+  --font-12: 0.75rem;
+  --font-14: 0.875rem;
+  --font-16: 1rem;
+  --font-18: 1.125rem;
+  --font-20: 1.25rem;
+  --font-24: 1.5rem;
+  --font-32: 2rem;
+  --font-36: 2.25rem;
+  --font-48: 3rem;
+  --font-56: 3.5rem;
+  --font-64: 4rem;
+  --font-96: 6rem;
+
+  /* DOM ELEMENT SIZES */
+  --size-16: 1rem;
+  --size-18: 1.125rem;
+  --size-24: 1.5rem;
+  --size-32: 2rem;
+  --size-36: 2.25rem;
+  --size-40: 2.5rem;
+  --size-48: 3rem;
+  --size-56: 3.5rem;
+  --size-64: 4rem;
+  --size-96: 6rem;
+  --size-96: 6rem;
+  --size-192: 12rem;
+  --size-208: 13rem;
+}

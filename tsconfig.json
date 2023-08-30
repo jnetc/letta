@@ -1,0 +1,56 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
+    "paths": {
+      "@Components/*": [
+        "./src/components/*"
+      ],
+      "@Layouts/*": [
+        "./src/layouts/*"
+      ],
+      "@Pages/*": [
+        "./src/pages/*"
+      ],
+      "@Helpers/*": [
+        "src/utils/*"
+      ],
+      "@Styles/*": [
+        "./src/styles/*"
+      ],
+      "@Types": [
+        "./types.ts"
+      ],
+      "@Lib/*": [
+        "./src/lib/*"
+      ],
+      "@Utils/*": [
+        "./src/utils/*"
+      ]
+    }
+  },
+}

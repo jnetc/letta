@@ -3,17 +3,17 @@ import Layout from '@Layouts/Layout.astro';
 import Card from '@Components/Card.astro';
 import Header from '@Components/Header.astro';
 import { getLangFromUrl } from '@Utils/defaultLang.ts';
-import FetchFromDatoCMS from '@Lib/datocms.ts';
-// LOCAL DATA!!!
-// import LocaleData from '@Lib/localdata';
 
 // Example: Construct a canonical URL using your production domain
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const lang = getLangFromUrl(Astro.url);
+
+import FetchFromDatoCMS from '@Lib/datocms.ts';
 const data = await FetchFromDatoCMS(lang);
+// LOCAL DATA!!!
+// import LocaleData from '@Lib/localdata';
 // const data = await LocaleData(lang);
-console.log(data);
 ---
 
 <!-- PAGE META TAGS -->

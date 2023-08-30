@@ -6,7 +6,7 @@ export default async function FetchFromDatoCMS(lang: LanguagesType) {
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json',
-      Authorization: `Bearer ${import.meta.env.DATOCMS_API_KEY}`,
+      Authorization: `Bearer ${import.meta.env.PUBLIC_DATOCMS_API_KEY}`,
     },
     body: JSON.stringify({
       query: `{

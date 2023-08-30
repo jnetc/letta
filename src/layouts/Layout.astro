@@ -1,6 +1,6 @@
 ---
-// import { getLangFromUrl } from '@Utils/defaultLang.ts';
-// const lang = getLangFromUrl(Astro.url);
+import { getLangFromUrl } from '@Utils/defaultLang.ts';
+const lang = getLangFromUrl(Astro.url);
 
 import '@Styles/variable.css';
 import '@Styles/fonts.css';
@@ -8,7 +8,7 @@ import '@Styles/global.css';
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
 

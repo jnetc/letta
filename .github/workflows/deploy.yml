@@ -6,6 +6,10 @@ on:
   push:
     branches: [main]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
+  env:
+  # Setting an environment variable with the value of a configuration variable
+  env_var: ${{ vars.DATOCMS_API_KEY }}
+
   workflow_dispatch:
 
 # Allow this job to clone the repo and create a page deployment

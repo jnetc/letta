@@ -11,7 +11,7 @@ on:
 
 env:
   # Setting an environment variable with the value of a configuration variable
-  DATOCMS_API_KEY: ${{ vars.DATOCMS_API_KEY }}
+  PUBLIC_DATOCMS_API_KEY: ${{ vars.PUBLIC_DATOCMS_API_KEY }}
 
 # Allow this job to clone the repo and create a page deployment
 permissions:
@@ -22,13 +22,11 @@ permissions:
 jobs:
   build:
     env:
-      DATOCMS_API_KEY: ${{ vars.DATOCMS_API_KEY }}
+      PUBLIC_DATOCMS_API_KEY: ${{ vars.PUBLIC_DATOCMS_API_KEY }}
     runs-on: ubuntu-latest
     steps:
-      - name: Print ENV SECRET
-        run: echo ${{ secrets.DATOCMS_API_KEY }} 
       - name: Print ENV VAR
-        run: echo ${{ vars.DATOCMS_API_KEY }} 
+        run: echo ${{ vars.PUBLIC_DATOCMS_API_KEY }}
       - name: Checkout your repository using git
         uses: actions/checkout@v3
       - name: Install, build, and upload your site

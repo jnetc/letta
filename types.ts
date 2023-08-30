@@ -9,8 +9,13 @@ export interface IArticle {
   description: string;
 }
 
+export interface ILinks extends NameType {
+  anchor: string;
+  part: string;
+  style: string;
+}
 export interface INavigation {
-  links: Array<{ anchor: string; id: string; linkName: string }>;
+  links: Array<ILinks>;
 }
 
 interface IFavicon {

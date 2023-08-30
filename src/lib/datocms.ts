@@ -33,8 +33,9 @@ export default async function FetchFromDatoCMS(lang: LanguagesType) {
           fragment NavigationRecordFragment on NavigationRecord {
             links {
               anchor
-              id
-              linkName
+              name
+              part
+              style
             }
           }
         `,

@@ -3,15 +3,15 @@ name: Deploy to GitHub Pages
 on:
   # Trigger the workflow every time you push to the `main` branch
   # Using a different branch name? Replace `main` with your branch’s name
+  env:
+    # Setting an environment variable with the value of a configuration variable
+    env_var: ${{ vars.DATOCMS_API_KEY }}
   push:
     branches: [main]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
 
   workflow_dispatch:
 
-env:
-  # Setting an environment variable with the value of a configuration variable
-  env_var: ${{ vars.DATOCMS_API_KEY }}
 # Allow this job to clone the repo and create a page deployment
 permissions:
   contents: read

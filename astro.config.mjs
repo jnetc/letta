@@ -8,7 +8,7 @@ export default defineConfig({
   // base: '/letta',
   compressHTML: true,
   // adapter: vercel(),
-  // output: 'static',
+  output: 'server',
   build: {
     inlineStylesheets: `auto`,
   },

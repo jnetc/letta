@@ -13,11 +13,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const lang = getLangFromUrl(Astro.url);
 const data = await FetchFromDatoCMS(lang);
 // const data = await LocaleData(lang);
+console.log(data);
 ---
 
 <!-- PAGE META TAGS -->
 <meta name="description" content="Astro description" />
-<title>{data._site.globalSeo.fallbackSeo.title}</title>
+<!-- <title>{data._site.globalSeo.fallbackSeo.title}</title> -->
 <link rel="canonical" href={canonicalURL} />
 
 <!-- PAGE DOM ELEMENTS -->

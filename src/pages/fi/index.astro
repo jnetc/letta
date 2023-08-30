@@ -1,6 +1,7 @@
 ---
 import Layout from '@Layouts/Layout.astro';
 import Card from '@Components/Card.astro';
+import Header from '@Components/Header.astro';
 import { getLangFromUrl } from '@Utils/defaultLang.ts';
 import FetchFromDatoCMS from '@Lib/datocms.ts';
 // LOCAL DATA!!!
@@ -16,12 +17,12 @@ const data = await FetchFromDatoCMS(lang);
 
 <!-- PAGE META TAGS -->
 <meta name="description" content="Astro description" />
-<title>{data._site.globalSeo.fallbackSeo.title}</title>
+<!-- <title>{data._site.globalSeo.fallbackSeo.title}</title> -->
 <link rel="canonical" href={canonicalURL} />
 
 <!-- PAGE DOM ELEMENTS -->
 <Layout title="Welcome to Astro.">
-  <h1>Tervetuloa Lettin kotisivu</h1>
+  <Header links={data.navigation.links} />
 
   <p class="instructions">
     To get started, open the directory <code>src/pages</code> in your project.<br />

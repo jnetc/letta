@@ -1,0 +1,43 @@
+<svg
+  class="header__arrow-menu"
+  width="315"
+  height="278"
+  viewBox="0 0 315 278"
+  fill="none"
+  aria-hidden="true"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M26.8074 273.712C19.8975 160.78 181.008 51.7138 246.462 116.288C317.627 186.495 167.722 252.4 109.135 177.732C64.2288 120.5 128.579 50.7236 313.921 3.14709M26.8074 273.712L2.33789 250.351M26.8074 273.712L48.8794 250.351"
+    stroke="#B3B0FF"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+</svg>
+
+<style>
+  .header__arrow-menu {
+    grid-column: 1 / -1;
+    grid-row: 1;
+
+    position: absolute;
+    inset-inline-start: 30%;
+    inset-block-start: -90%;
+  }
+
+  path {
+    stroke-dasharray: 800;
+    stroke-dashoffset: -800;
+    opacity: 0;
+    transform: translateY(-5rem) scale(0.5);
+    animation: stroke-arrow 1s cubic-bezier(0.41, 0.4, 0.29, 1.16) forwards;
+    animation-delay: 1s;
+  }
+  @keyframes stroke-arrow {
+    to {
+      stroke-dashoffset: 0;
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+</style>

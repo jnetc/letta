@@ -1,0 +1,134 @@
+---
+import MenuHover from './SVG/MenuHover.astro';
+import ArrowUnderMenu from './SVG/ArrowUnderMenu.astro';
+
+import type { INavigation } from '@Types';
+interface Props extends INavigation {}
+
+const { links } = Astro.props;
+---
+
+<nav class="header__pc-nav" aria-label="desktop navigation">
+  <ul class="pc-nav__links desktop">
+    <ArrowUnderMenu />
+    {
+      links.map(link => {
+        const firstPart = link.name.split(link.part).length >= 2 ? link.name.split(link.part)[0] : null;
+        const styledPart = `${link.part}`;
+        const lastPart =
+          link.name.split(link.part).length >= 2
+            ? link.name.split(link.part)[1]
+            : link.name.split(link.part)[0].toLowerCase();
+
+        return (
+          <li>
+            <a href={link.anchor} class="pc-nav__link color-white">
+              {firstPart}
+              <em class={`color-${link.style}`}>{styledPart}</em>
+              {lastPart}
+            </a>
+          </li>
+        );
+      })
+    }
+    <MenuHover />
+  </ul>
+</nav>
+
+<style>
+  .header__pc-nav {
+    grid-column: 8 / 14;
+    grid-row: 1 / -1;
+    place-self: center;
+    position: relative;
+  }
+
+  .pc-nav__links {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: var(--gap-16) var(--gap-8);
+    position: relative;
+  }
+
+  .pc-nav__links li {
+    display: flex;
+    grid-column: 2;
+  }
+
+  li:nth-of-type(2):hover ~ :global(.nav__link-svg) {
+    translate: 0 calc(3rem + 1rem);
+  }
+  li:nth-of-type(3):hover ~ :global(.nav__link-svg) {
+    translate: 0 calc(3rem * 2 + 1rem * 2);
+  }
+  li:nth-of-type(4):hover ~ :global(.nav__link-svg) {
+    translate: 0 calc(3rem * 3 + 1rem * 3);
+  }
+  li:nth-of-type(5):hover ~ :global(.nav__link-svg) {
+    translate: 0 calc(3rem * 4 + 1rem * 4);
+  }
+  li:nth-of-type(6):hover ~ :global(.nav__link-svg) {
+    translate: 0 calc(3rem * 5 + 1rem * 5);
+  }
+
+  .pc-nav__link {
+    display: inline-flex;
+    font-weight: bold;
+    font-size: var(--font-48);
+    /* text-transform: capitalize; */
+    transition: all var(--transition-03) ease-in-out;
+  }
+  .pc-nav__link:hover {
+    transform: translateY(5px);
+  }
+  .pc-nav__link:not(:hover) {
+    opacity: 0.7;
+  }
+
+  .pc-nav__link em {
+    position: relative;
+    inset-inline-end: 3px;
+    font-weight: 400;
+    transition: all var(--transition-03) ease-in-out;
+  }
+  .pc-nav__link:hover em {
+    transform: translateY(-10px);
+  }
+
+  :global(.nav__link-svg) {
+    grid-column: 1;
+    grid-row: 1;
+    place-self: center;
+    inset-block-end: 0;
+    transition: all 0.3s ease-in-out;
+  }
+</style>
+
+<script>
+  // const svg = document.querySelector('.pc-nav__link-svg');
+  // const links = document.querySelector<HTMLUListElement>('.pc-nav__links');
+
+  // function move(event: MouseEvent) {
+  //   const getLinksHeight = links!.getBoundingClientRect().height;
+  //   const getLinksTop = links!.getBoundingClientRect().top;
+  //   const halfLinkHeight = links!.children[0].getBoundingClientRect().height / 2;
+
+  //   const topPosition = event.clientY - (getLinksTop + halfLinkHeight);
+  //   const bottomPosition = getLinksHeight - (halfLinkHeight + 8 * 3);
+
+  //   if (topPosition < 0) {
+  //     svg?.setAttribute('style', `transform: translate3d(0, 0, 0`);
+  //     return;
+  //   }
+
+  //   if (topPosition > bottomPosition) {
+  //     svg?.setAttribute('style', `transform: translate3d(0, ${bottomPosition}px, 0`);
+  //     return;
+  //   }
+
+  //   svg?.setAttribute('style', `transform: translate3d(0, ${topPosition}px, 0`);
+  //   links?.removeEventListener('mousemove', move);
+  // }
+
+  // links?.addEventListener('mousemove', move, true);
+</script>

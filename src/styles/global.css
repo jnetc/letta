@@ -35,13 +35,14 @@ svg {
 
 a {
   text-decoration: none;
+  line-height: 1;
 }
 
 ul {
   list-style-type: none;
 }
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -49,7 +50,7 @@ h5,
 h6 {
   font-weight: bold;
   line-height: 1;
-}
+} */
 
 p,
 input,
@@ -76,6 +77,10 @@ textarea {
 main {
   padding-block-start: 9rem;
 }
+button {
+  background-color: transparent;
+  cursor: pointer;
+}
 
 /* CLASSES */
 .grid {
@@ -89,6 +94,18 @@ main {
 }
 .color-grey {
   color: var(--text-grey);
+}
+.color-purpul {
+  color: var(--color-purpul);
+}
+.color-blue {
+  color: var(--color-blue);
+}
+.color-pink {
+  color: var(--color-pink);
+}
+.color-yellow {
+  color: var(--color-yellow);
 }
 
 /* MEDIA QUERIES */

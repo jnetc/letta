@@ -9,14 +9,19 @@ export default async function FetchFromDatoCMS(lang: LanguagesType) {
       Authorization: `Bearer ${import.meta.env.PUBLIC_DATOCMS_API_KEY}`,
     },
     body: JSON.stringify({
-      query: `{
+      query: `
+          {
             _site(locale: ${lang}) {
               ...SiteFragment
             }
+
             navigation(locale: ${lang}) {
               ...NavigationRecordFragment
             }
 
+            heroSection(locale: ${lang}) {
+              ...HeroSectionRecordFragment
+            }
           }
 
           fragment SiteFragment on Site {
@@ -30,6 +35,7 @@ export default async function FetchFromDatoCMS(lang: LanguagesType) {
               url
             }
           }
+
           fragment NavigationRecordFragment on NavigationRecord {
             links {
               anchor
@@ -37,6 +43,12 @@ export default async function FetchFromDatoCMS(lang: LanguagesType) {
               part
               style
             }
+          }
+
+          fragment HeroSectionRecordFragment on HeroSectionRecord {
+            name
+            style
+            title
           }
         `,
     }),

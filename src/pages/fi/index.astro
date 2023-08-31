@@ -1,7 +1,7 @@
 ---
 import Layout from '@Layouts/Layout.astro';
 import Card from '@Components/Card.astro';
-import Header from '@Components/Header.astro';
+import Header from '@Components/hero-section/Header.astro';
 import { getLangFromUrl } from '@Utils/defaultLang.ts';
 
 // Example: Construct a canonical URL using your production domain
@@ -9,11 +9,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const lang = getLangFromUrl(Astro.url);
 
-import FetchFromDatoCMS from '@Lib/datocms.ts';
-const data = await FetchFromDatoCMS(lang);
+// import FetchFromDatoCMS from '@Lib/datocms.ts';
+// const data = await FetchFromDatoCMS(lang);
 // LOCAL DATA!!!
-// import LocaleData from '@Lib/localdata';
-// const data = await LocaleData(lang);
+import LocaleData from '@Lib/localdata';
+const data = await LocaleData(lang);
 ---
 
 <!-- PAGE META TAGS -->
@@ -23,7 +23,7 @@ const data = await FetchFromDatoCMS(lang);
 
 <!-- PAGE DOM ELEMENTS -->
 <Layout title="Welcome to Astro.">
-  <Header links={data.navigation.links} />
+  <Header links={data.navigation} hero={data.heroSection} />
 
   <p class="instructions">
     To get started, open the directory <code>src/pages</code> in your project.<br />

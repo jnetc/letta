@@ -1,0 +1,35 @@
+---
+import DaisyFlowerFace from './SVG/DaisyFlowerFace.astro';
+import DaisyFlowerLeafs from './SVG/DaisyFlowerLeafs.astro';
+---
+
+<div class="header__daisy-flower" aria-hidden="true">
+  <DaisyFlowerFace />
+  <DaisyFlowerLeafs />
+</div>
+
+<style>
+  .header__daisy-flower {
+    grid-column: 11 / 4 span;
+    grid-row: 1 / -1;
+    justify-self: flex-start;
+    align-self: flex-end;
+    position: absolute;
+    inset-block-start: 70vh;
+    opacity: 0;
+    animation: show-daisy 0.5s cubic-bezier(0, 0.64, 0.1, 1.08) forwards;
+    animation-delay: 2s;
+    z-index: -1;
+  }
+
+  @keyframes show-daisy {
+    0% {
+      opacity: 0;
+      transform: translateY(10vh) scale(0.1);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+</style>

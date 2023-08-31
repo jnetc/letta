@@ -1,0 +1,20 @@
+---
+---
+
+<nav class="header__top-nav" aria-label="logo, switch language and mobile navigation">
+  <a href="/" class="top-nav__logo color-white">letta</a>
+  <a href="/" class="top-nav__lang-btn color-white">en</a>
+  <a href="/fi" class="top-nav__lang-btn color-white">fi</a>
+</nav>
+
+<style>
+  .header__top-nav {
+    grid-column: 2 / 14;
+    grid-row: 1;
+    align-self: flex-start;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    column-gap: var(--gap-16);
+    padding-block: var(--gap-24);
+  }
+</style>

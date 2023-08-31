@@ -1,0 +1,97 @@
+---
+import TopNavigation from './TopNavigation.astro';
+import CenterNavigation from './CenterNavigation.astro';
+import MainTitle from './SVG/MainTitle.astro';
+import DaisyFlower from './DaisyFlower.astro';
+
+import type { INavigation, IHeroSection } from '@Types';
+
+interface Props {
+  links: INavigation;
+  hero: IHeroSection;
+}
+
+const { links, hero } = Astro.props;
+---
+
+<header class="grid header">
+  <TopNavigation />
+  <MainTitle />
+  <h1 class="header__title color-white">
+    {hero.title}
+  </h1>
+  <button class="header__button color-white" type="button">
+    {hero.name.split(hero.style)}
+    <strong class="color-purpul">{hero.style}</strong>
+  </button>
+  <CenterNavigation links={links.links} />
+  <DaisyFlower />
+</header>
+
+<style>
+  .header {
+    block-size: 100dvh;
+    grid-template-rows: auto repeat(3, min-content) auto;
+    row-gap: var(--gap-64);
+    position: relative;
+  }
+
+  .header__title,
+  .header__button {
+    grid-column: 2 / 7;
+    align-self: center;
+  }
+
+  .header__title {
+    grid-row: 3;
+    font-size: var(--font-36);
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .header__button {
+    grid-row: 4;
+    justify-self: flex-start;
+    padding-inline: var(--gap-24);
+    padding-block: var(--gap-16);
+    position: relative;
+    top: 0;
+    background-color: var(--bg-black);
+    border-color: var(--color-purpul);
+    border-width: 4px;
+    border-style: solid;
+    border-radius: var(--border-corner-16);
+    font-size: var(--font-36);
+    text-transform: uppercase;
+    transition: all var(--transition-01) ease-in-out;
+  }
+
+  .header__button::after {
+    content: '';
+    position: absolute;
+    inline-size: calc(100% + 3px);
+    block-size: calc(100% + 3px);
+    inset-block-start: 1.5rem;
+    inset-inline-start: 1.5rem;
+    border-color: var(--color-pink);
+    border-width: 4px;
+    border-style: solid;
+    border-radius: inherit;
+    transition: all var(--transition-01) ease-in-out;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .header__button:active {
+    top: 0.25rem;
+  }
+
+  .header__button:hover {
+    color: var(--color-purpul);
+  }
+
+  .header__button:active::after {
+    inset-block-start: 1rem;
+    inset-inline-start: 1rem;
+  }
+</style>
